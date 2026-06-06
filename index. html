@@ -248,7 +248,7 @@
     let selectedAsset = 'TON';
     let userWalletAddress = null;
     const ADMIN_WALLET = 'UQCEA1RKJ0eAZ_kvpN7tzhrCIh94XBw9ROSeQbaHPXOEOPRP';
-    const MANIFEST_URL = 'https://dadton.vercel.app/tonconnect-manifest.json';
+    const MANIFEST_URL = 'https://dadton-frontent.vercel.app/tonconnect-manifest.json';
 
     function toast(msg) {
         const t = document.getElementById('toast');
@@ -312,7 +312,6 @@
         if (tonConnectUI) return;
         
         if (typeof TonConnectUI === 'undefined') {
-            console.log('Ждём загрузку TonConnectUI...');
             setTimeout(initTonConnect, 500);
             return;
         }
@@ -333,8 +332,6 @@
                     document.getElementById('walletStatus').innerHTML = '';
                 }
             });
-            
-            console.log('TonConnectUI инициализирован');
         } catch(e) {
             console.error('Init error:', e);
         }
@@ -367,8 +364,6 @@
     }
 
     // ==================== ОСТАЛЬНЫЕ ИГРЫ ====================
-    // (код игр такой же как у тебя, я его сократил для длины сообщения,
-    //  но в полной версии он есть. Если нужно — скину полностью)
     
     function updateRocketPosition(multiplier) {
         const rocket = document.getElementById('rocketShip');
